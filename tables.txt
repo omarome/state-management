@@ -1,9 +1,7 @@
 CREATE TABLE `PET_CATEGORY` (
   `pet_category_id` int(11) NOT NULL,
   `category_name` varchar(20) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `PET_COMMENTS` (
   `pet_comment_id` int(11) NOT NULL,
@@ -14,7 +12,7 @@ CREATE TABLE `PET_COMMENTS` (
   `comment_owner_email` varchar(100) DEFAULT NULL,
   `comment` text,
   `pet_id` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `PET_COMMENTS` (`pet_comment_id`, `pet_comm_vst`, `pet_comm_vet`, `comment_owner_firstname`, `comment_owner_lastname`, `comment_owner_email`, `comment`, `pet_id`) VALUES
 (1, '2021-04-06', '0000-00-00', 'Sala', 'selaiminen', 'sala.selaimeinen@gmail.com', ' I like this cat, its so cute. ', 1),
@@ -32,7 +30,7 @@ CREATE TABLE `PET_VIEWING` (
   `viewed_id` int(11) NOT NULL,
   `viewed` int(11) DEFAULT NULL,
   `pet_id` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `PET_VIEWING` (`viewed_id`, `viewed`, `pet_id`) VALUES
 (1, 8, 1),
@@ -51,7 +49,7 @@ CREATE TABLE `REGISTER_USER` (
   `user_vst` date NOT NULL,
   `user_vet` date DEFAULT NULL,
   `user_type_id` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 INSERT INTO `REGISTER_USER` (`user_id`, `firstname`, `lastname`, `email_address`, `password`, `phone_number`, `picture`, `address`, `user_vst`, `user_vet`, `user_type_id`) VALUES
@@ -68,7 +66,7 @@ CREATE TABLE `USER_MESSAGES` (
   `user_mess_vst` date NOT NULL,
   `user_mess_vet` date DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 INSERT INTO `USER_MESSAGES` (`message_id`, `message`, `user_mess_vst`, `user_mess_vet`, `user_id`) VALUES
@@ -90,23 +88,21 @@ CREATE TABLE `USER_PET` (
   `pet_vet` date DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `pet_category_id` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 INSERT INTO `USER_PET` (`pet_id`, `title`, `birthdate`, `breed`, `price`, `picture`, `description`, `pet_vst`, `pet_vet`, `user_id`, `pet_category_id`) VALUES
 (2, 'Cat for Sell', '2020-12-15', 'Percian cat ', '500$', '456197280f208ba5527488b8c75c07f2', 'very nice citty, likes to play', '2021-04-29', NULL, 3, 1),
 (8, 'Dog for Sell', '2020-12-22', 'Bulldog', '900$', '737547375c5125333369e44dc5c56e95', 'very nice puppy, likes to play', '2021-04-29', NULL, 2, 2),
 (1, 'Cat for Sell', '2020-12-18', 'Percian cat ', '700$', 'c5c232e1fd941dd9d9a7f6df2db6ff1a', 'very nice citty, likes to play sometimes', '2021-04-29', NULL, 3, 1),
-(7, 'Dog for Sell', '2020-10-28', 'German shaperd', '800$', '3772cefd746e4cc0109e83f8ffb9b5ae', '', '2021-04-29', NULL, 1, 2),
-(29, 'CatforSelltestnow', '2021-05-14', 'Percian cat ', '900$', '25712d9af27b88f5784f348103b9fb8e', 'caaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat', '0000-00-00', NULL, 2, 1),
-(30, 'testcat', '2021-05-04', 'Percian cat ', '200', '60c4fe339d6fc1458858172cccb97326', 'cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc', '0000-00-00', NULL, 5, 1),
-(31, 'CatforSell', '2021-05-20', 'Percian cat ', '150$', 'a9e06e9ee8f7d816622ef86430e61a1d', 'cccccccccccccccccccccaaaaaaaaaaaaaaaaaaaaaatttttttttttttttttttttt', '0000-00-00', NULL, 2, 1);
+(7, 'Dog for Sell', '2020-10-28', 'German shaperd', '800$', '3772cefd746e4cc0109e83f8ffb9b5ae', '', '2021-04-29', NULL, 1, 2);
+
 
 
 CREATE TABLE `USER_TYPE` (
   `user_type_id` int(11) NOT NULL,
   `type` varchar(30) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 INSERT INTO `USER_TYPE` (`user_type_id`, `type`) VALUES
