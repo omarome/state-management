@@ -3,19 +3,10 @@ CREATE TABLE `PET_CATEGORY` (
   `category_name` varchar(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `PET_CATEGORY`
---
 
 INSERT INTO `PET_CATEGORY` (`pet_category_id`, `category_name`) VALUES
 (1, 'Cat'),
 (2, 'Dog');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `PET_COMMENTS`
---
 
 CREATE TABLE `PET_COMMENTS` (
   `pet_comment_id` int(11) NOT NULL,
@@ -28,10 +19,6 @@ CREATE TABLE `PET_COMMENTS` (
   `pet_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `PET_COMMENTS`
---
-
 INSERT INTO `PET_COMMENTS` (`pet_comment_id`, `pet_comm_vst`, `pet_comm_vet`, `comment_owner_firstname`, `comment_owner_lastname`, `comment_owner_email`, `comment`, `pet_id`) VALUES
 (1, '2021-04-06', '0000-00-00', 'Sala', 'selaiminen', 'sala.selaimeinen@gmail.com', ' I like this cat, its so cute. ', 1),
 (2, '2021-04-11', '0000-00-00', 'Kerim', 'saif', 'kerim.seif@gmail.com', ' I like this dog, its so cute. ', 2),
@@ -43,11 +30,6 @@ INSERT INTO `PET_COMMENTS` (`pet_comment_id`, `pet_comm_vst`, `pet_comm_vet`, `c
 (8, '0000-00-00', NULL, 'Ahmed', 'Majid', 'ahmed@majid', 'nice pet', 1),
 (9, '0000-00-00', NULL, 'Tito', 'Mark', 'Tito@m', 'nice pet', 8);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `PET_VIEWING`
---
 
 CREATE TABLE `PET_VIEWING` (
   `viewed_id` int(11) NOT NULL,
@@ -55,19 +37,10 @@ CREATE TABLE `PET_VIEWING` (
   `pet_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `PET_VIEWING`
---
-
 INSERT INTO `PET_VIEWING` (`viewed_id`, `viewed`, `pet_id`) VALUES
 (1, 8, 1),
 (2, 6, 8);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `REGISTER_USER`
---
 
 CREATE TABLE `REGISTER_USER` (
   `user_id` int(11) NOT NULL,
@@ -83,9 +56,6 @@ CREATE TABLE `REGISTER_USER` (
   `user_type_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `REGISTER_USER`
---
 
 INSERT INTO `REGISTER_USER` (`user_id`, `firstname`, `lastname`, `email_address`, `password`, `phone_number`, `picture`, `address`, `user_vst`, `user_vet`, `user_type_id`) VALUES
 (1, 'Jaakko', 'Kirjainen', 'jaakko@metropolia.fi', 'test1234', 455244232, 'no picture', 'Jokukuja 1, A1', '2012-05-02', '0000-00-00', 1),
@@ -95,12 +65,6 @@ INSERT INTO `REGISTER_USER` (`user_id`, `firstname`, `lastname`, `email_address`
 (6, 'ahmed', 'Al-Mashhadani', 'almashhadaniomar9@gmail.com', '$2a$12$VqUpBJBFnd9fpTE9xo4/seKXkwD9aPCH8guOrN5rlXmXtn3PEWc66', NULL, NULL, 'Uudenkyläntie32', '0000-00-00', NULL, NULL),
 (7, 'Karim', 'Al-Mashhadani', 'almas@gmail.com', '$2a$12$xMrUM9/IGTXSsSDNQG5CjOWwu0hMyDcw4qh01XopomzPU9aakL7v6', NULL, NULL, 'Uudenkyläntie32', '0000-00-00', NULL, NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `USER_MESSAGES`
---
-
 CREATE TABLE `USER_MESSAGES` (
   `message_id` int(11) NOT NULL,
   `message` text,
@@ -109,9 +73,6 @@ CREATE TABLE `USER_MESSAGES` (
   `user_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `USER_MESSAGES`
---
 
 INSERT INTO `USER_MESSAGES` (`message_id`, `message`, `user_mess_vst`, `user_mess_vet`, `user_id`) VALUES
 (1, ' I like this cat, I can pay 200$?', '2021-01-02', '0000-00-00', 1),
@@ -119,11 +80,6 @@ INSERT INTO `USER_MESSAGES` (`message_id`, `message`, `user_mess_vst`, `user_mes
 (3, ' I like this dog, I can pay 300$?', '2021-01-02', '0000-00-00', 2),
 (4, ' I like THAT DOG, I can pay 400$?', '2021-01-02', '0000-00-00', 3);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `USER_PET`
---
 
 CREATE TABLE `USER_PET` (
   `pet_id` int(11) NOT NULL,
@@ -139,9 +95,6 @@ CREATE TABLE `USER_PET` (
   `pet_category_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `USER_PET`
---
 
 INSERT INTO `USER_PET` (`pet_id`, `title`, `birthdate`, `breed`, `price`, `picture`, `description`, `pet_vst`, `pet_vet`, `user_id`, `pet_category_id`) VALUES
 (2, 'Cat for Sell', '2020-12-15', 'Percian cat ', '500$', '456197280f208ba5527488b8c75c07f2', 'very nice citty, likes to play', '2021-04-29', NULL, 3, 1),
@@ -152,118 +105,55 @@ INSERT INTO `USER_PET` (`pet_id`, `title`, `birthdate`, `breed`, `price`, `pictu
 (30, 'testcat', '2021-05-04', 'Percian cat ', '200', '60c4fe339d6fc1458858172cccb97326', 'cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc', '0000-00-00', NULL, 5, 1),
 (31, 'CatforSell', '2021-05-20', 'Percian cat ', '150$', 'a9e06e9ee8f7d816622ef86430e61a1d', 'cccccccccccccccccccccaaaaaaaaaaaaaaaaaaaaaatttttttttttttttttttttt', '0000-00-00', NULL, 2, 1);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `USER_TYPE`
---
 
 CREATE TABLE `USER_TYPE` (
   `user_type_id` int(11) NOT NULL,
   `type` varchar(30) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `USER_TYPE`
---
 
 INSERT INTO `USER_TYPE` (`user_type_id`, `type`) VALUES
 (1, 'user'),
 (2, 'admin');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `PET_CATEGORY`
---
 ALTER TABLE `PET_CATEGORY`
   ADD PRIMARY KEY (`pet_category_id`);
 
---
--- Indexes for table `PET_COMMENTS`
---
 ALTER TABLE `PET_COMMENTS`
   ADD PRIMARY KEY (`pet_comment_id`,`pet_comm_vst`);
 
---
--- Indexes for table `PET_VIEWING`
---
 ALTER TABLE `PET_VIEWING`
   ADD PRIMARY KEY (`viewed_id`);
 
---
--- Indexes for table `REGISTER_USER`
---
 ALTER TABLE `REGISTER_USER`
   ADD PRIMARY KEY (`user_id`,`user_vst`);
 
---
--- Indexes for table `USER_MESSAGES`
---
 ALTER TABLE `USER_MESSAGES`
   ADD PRIMARY KEY (`message_id`,`user_mess_vst`);
 
---
--- Indexes for table `USER_PET`
---
 ALTER TABLE `USER_PET`
   ADD PRIMARY KEY (`pet_id`,`pet_vst`);
 
---
--- Indexes for table `USER_TYPE`
---
 ALTER TABLE `USER_TYPE`
   ADD PRIMARY KEY (`user_type_id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `PET_CATEGORY`
---
 ALTER TABLE `PET_CATEGORY`
   MODIFY `pet_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- AUTO_INCREMENT for table `PET_COMMENTS`
---
 ALTER TABLE `PET_COMMENTS`
   MODIFY `pet_comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
---
--- AUTO_INCREMENT for table `PET_VIEWING`
---
 ALTER TABLE `PET_VIEWING`
   MODIFY `viewed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- AUTO_INCREMENT for table `REGISTER_USER`
---
 ALTER TABLE `REGISTER_USER`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
---
--- AUTO_INCREMENT for table `USER_MESSAGES`
---
 ALTER TABLE `USER_MESSAGES`
   MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
---
--- AUTO_INCREMENT for table `USER_PET`
---
 ALTER TABLE `USER_PET`
   MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
---
--- AUTO_INCREMENT for table `USER_TYPE`
---
 ALTER TABLE `USER_TYPE`
   MODIFY `user_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
