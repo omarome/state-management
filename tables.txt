@@ -4,9 +4,6 @@ CREATE TABLE `PET_CATEGORY` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
-INSERT INTO `PET_CATEGORY` (`pet_category_id`, `category_name`) VALUES
-(1, 'Cat'),
-(2, 'Dog');
 
 CREATE TABLE `PET_COMMENTS` (
   `pet_comment_id` int(11) NOT NULL,
